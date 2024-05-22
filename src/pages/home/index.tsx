@@ -24,7 +24,7 @@ export default function HomePage() {
         that can be composed to build any design, directly in your markup.
       </p>
       <div className="mt-6 sm:mt-10 flex justify-center space-x-6 text-sm">
-        <a className="btn" href="/docs/installation">
+        <a className="btn" href="/">
           Get started
         </a>
         <button
