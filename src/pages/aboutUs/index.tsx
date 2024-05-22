@@ -1,8 +1,6 @@
-import React from "react";
-
 export const AboutUs = () => {
   return (
-    <section className="text-center px-8 mt-20 sm:mt-32 md:mt-40">
+    <section className="mb-20 overflow-hidden sm:mb-32 md:mb-40 text-center px-8 mt-20 sm:mt-32 md:mt-40">
       <h2 className="text-slate-900 text-4xl tracking-tight font-extrabold sm:text-5xl dark:text-white">
         “Best practices” don’t actually work.
       </h2>
