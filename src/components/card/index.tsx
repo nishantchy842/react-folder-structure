@@ -1,4 +1,7 @@
-export default function Card() {
+import { CardType } from "../../models/cardModel";
+
+export default function Card({ data }: { data: CardType }) {
+  const { image, name, position, desc } = data;
   return (
     <section className=" flex flex-col bg-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
       <div className="flex items-center space-x-4">
@@ -8,16 +11,13 @@ export default function Card() {
         />
         <div className="flex-auto">
           <div className="text-base text-slate-900 font-semibold dark:text-slate-300">
-            <span className="absolute inset-0"></span>Ryan Florence
+            <span className="absolute inset-0"></span>
+            {name}
           </div>
-          <div className="mt-0.5 dark:text-slate-400">
-            Remix &amp; React Training
-          </div>
+          <div className="mt-0.5 dark:text-slate-400">{position}</div>
         </div>
       </div>
-      <div className="mt-6 text-slate-700 dark:text-slate-300">
-        I feel like an idiot for not using Tailwind CSS until now.
-      </div>
+      <div className="mt-6 text-slate-700 dark:text-slate-300">{desc}</div>
     </section>
   );
 }
