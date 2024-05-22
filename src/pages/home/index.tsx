@@ -1,4 +1,9 @@
+import { HtmlHTMLAttributes, useContext } from "react";
+import { MessageContext } from "../../context/messageContext";
+
 export default function HomePage() {
+  const { setMessage } = useContext(MessageContext);
+
   return (
     <section className="relative max-w-5xl mx-auto pt-20 sm:pt-24 lg:pt-32">
       <h1 className="text-slate-900 font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-center dark:text-white">
@@ -23,10 +28,13 @@ export default function HomePage() {
         </code>{" "}
         that can be composed to build any design, directly in your markup.
       </p>
-      <div className="mt-6 sm:mt-10 flex justify-center space-x-6 text-sm">
-        <a className="btn" href="/">
+      <div
+        className="mt-6 sm:mt-10 flex justify-center space-x-6 text-sm"
+        onClick={() => setMessage({ message: "Welcome", success: true })}
+      >
+        <button type="button" className="btn">
           Get started
-        </a>
+        </button>
         <button
           type="button"
           className="hidden sm:flex items-center w-72 text-left space-x-3 px-4 h-12 bg-white ring-1 ring-slate-900/10 hover:ring-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-500 shadow-sm rounded-lg text-slate-400 dark:bg-slate-800 dark:ring-0 dark:text-slate-300 dark:highlight-white/5 dark:hover:bg-slate-700"
@@ -45,7 +53,15 @@ export default function HomePage() {
             <path d="m19 19-3.5-3.5"></path>
             <circle cx="11" cy="11" r="6"></circle>
           </svg>
-          <span className="flex-auto">Quick search...</span>
+          <input
+            className="flex-auto h-full dark:bg-slate-800 focus:outline-none dark:hover:bg-slate-700"
+            onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) =>
+              setMessage({
+                message: (e.target as HTMLInputElement).value,
+                success: true,
+              })
+            }
+          />
           <kbd className="font-sans font-semibold dark:text-slate-500">
             <abbr
               title="Control"

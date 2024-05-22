@@ -1,6 +1,7 @@
+import { memo } from "react";
 import { CardType } from "../../models/cardModel";
 
-export default function Card({ data }: { data: CardType }) {
+function Card({ data }: { data: CardType }) {
   const { image, name, position, desc } = data;
   return (
     <section className=" flex flex-col bg-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
@@ -21,3 +22,6 @@ export default function Card({ data }: { data: CardType }) {
     </section>
   );
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export default memo(Card);
