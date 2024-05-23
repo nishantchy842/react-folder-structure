@@ -1,5 +1,3 @@
-import React from "react";
-
 export function DarkModeIcons() {
   return (
     <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">

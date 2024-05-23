@@ -2,7 +2,7 @@ import { memo } from "react";
 import { CardType } from "../../models/cardModel";
 
 function Card({ data }: { data: CardType }) {
-  const { image, name, position, desc } = data;
+  const { name, position, desc } = data;
   return (
     <section className=" flex flex-col bg-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/5">
       <div className="flex items-center space-x-4">

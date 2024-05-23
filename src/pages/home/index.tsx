@@ -1,4 +1,4 @@
-import { HtmlHTMLAttributes, useContext } from "react";
+import { useContext } from "react";
 import { MessageContext } from "../../context/messageContext";
 
 export default function HomePage() {
